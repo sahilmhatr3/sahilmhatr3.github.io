@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sahil Mhatre — Portfolio</title>
+    <meta name="description" content="Personal portfolio of Sahil Mhatre. About, Blog, Projects, Contact.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#about" data-nav>SM</a>
+      <nav class="nav">
+        <button class="nav-item" data-target="about" aria-controls="about" aria-label="About" data-nav>About</button>
+        <button class="nav-item" data-target="blog" aria-controls="blog" aria-label="Blog" data-nav>Blog</button>
+        <button class="nav-item" data-target="projects" aria-controls="projects" aria-label="Projects" data-nav>Projects</button>
+        <button class="nav-item" data-target="contact" aria-controls="contact" aria-label="Contact" data-nav>Contact</button>
+        <div class="indicator" aria-hidden="true"></div>
+      </nav>
+    </header>
+
+    <main class="container" id="content" tabindex="-1">
+      <section id="about" class="section is-active" data-section>
+        <h1>Hi, I’m Sahil.</h1>
+        <p>
+          I build machine learning systems and write about the craft. This minimalist
+          site is intentionally focused—fast, accessible, and content-first.
+        </p>
+        <p>
+          Currently exploring deep learning, distributed optimization, and elegant
+          product experiences.
+        </p>
+        <ul class="links">
+          <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="#contact" data-nav>Contact</a></li>
+        </ul>
+      </section>
+
+      <section id="blog" class="section" data-section hidden>
+        <h1>Blog</h1>
+        <p>Occasional notes and write-ups. More soon.</p>
+        <article class="post">
+          <h2>Welcome</h2>
+          <p>This space will host articles on ML, systems, and engineering craft.</p>
+          <time datetime="2025-09-15">Sep 15, 2025</time>
+        </article>
+      </section>
+
+      <section id="projects" class="section" data-section hidden>
+        <h1>Projects</h1>
+        <ul class="cards">
+          <li class="card">
+            <h2>Minimal Portfolio</h2>
+            <p>This website. Clean, dark, fast, and keyboard-friendly.</p>
+            <div class="meta">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JS</span>
+            </div>
+          </li>
+          <li class="card">
+            <h2>Iris Explorer</h2>
+            <p>Classic dataset visualizations and simple models.</p>
+            <div class="meta">
+              <span class="tag">Python</span>
+              <span class="tag">ML</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="contact" class="section" data-section hidden>
+        <h1>Contact</h1>
+        <p>Best way to reach me is email.</p>
+        <form class="contact-form" action="https://formspree.io/f/xyyanon" method="POST">
+          <label>
+            <span>Name</span>
+            <input name="name" type="text" required>
+          </label>
+          <label>
+            <span>Email</span>
+            <input name="email" type="email" required>
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <button type="submit" class="btn">Send</button>
+          <p class="footnote">This uses a static form endpoint. Replace with your own.</p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© <span id="year"></span> Sahil Mhatre</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
+
+
