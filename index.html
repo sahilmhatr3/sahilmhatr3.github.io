@@ -3,8 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sahil Mhatre — Portfolio</title>
+    <title>Sahil Mhatre</title>
     <meta name="description" content="Personal portfolio of Sahil Mhatre. About, Blog, Projects, Contact.">
+    <link rel="icon" type="image/png" href="images/monogram.png">
+    <link rel="preload" href="images/monogram.png" as="image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -12,7 +14,7 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#about" data-nav>SM</a>
+      <a class="brand" href="#about" data-nav><img src="images/monogram.png" alt="SM" class="brand-image"></a>
       <nav class="nav">
         <button class="nav-item" data-target="about" aria-controls="about" aria-label="About" data-nav>About</button>
         <button class="nav-item" data-target="blog" aria-controls="blog" aria-label="Blog" data-nav>Blog</button>
@@ -24,18 +26,104 @@
 
     <main class="container" id="content" tabindex="-1">
       <section id="about" class="section is-active" data-section>
-        <h1>Hi, I’m Sahil.</h1>
-        <p>
-          I build machine learning systems and write about the craft. This minimalist
-          site is intentionally focused—fast, accessible, and content-first.
-        </p>
-        <p>
-          Currently exploring deep learning, distributed optimization, and elegant
-          product experiences.
-        </p>
+        <div class="about-intro">
+          <div class="about-text">
+            <h1>Hi, I'm Sahil.</h1>
+            <p>
+              I build machine learning systems and write about the craft. 
+              I've worked on everything from low‑latency infrastructure for 
+              hypersonic missile tracking to immersive data computing tools 
+              for research teams. I'm currently pursuing my master's at Cornell with 
+              a concentration in ML. Previously, I engineered distributed optimization 
+              systems, deployed conversational AI for small businesses, and developed 
+              analytics platforms that help organizations move faster. Outside of work,
+               I’ve studied in the U.S. and Australia, tutored students in STEM for years,
+               and keep a steady rotation of side projects that push me into new territory.
+            </p>
+            <p>
+              Currently exploring distributed optimizations, Web3, and new foods.
+            </p>
+          </div>
+          <img src="images/GradPhoto.jpg" alt="Sahil Mhatre" class="profile-photo">
+        </div>
+        
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <img src="images/Cornell Logo.png" alt="Cornell University" class="org-image">
+              <div class="timeline-text">
+                <h3>Cornell University</h3>
+                <p class="position">Master's in Computer Science (Merit Scholarship), May 2026</p>
+                <p class="description">Concentration in Machine Learning and Distributed Systems Optimization.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <img src="images/CACILogo.png" alt="CACI International" class="org-image">
+              <div class="timeline-text">
+                <h3>CACI International Inc</h3>
+                <p class="position">Software Engineer Intern, Space Department, May 2024 – Aug 2025</p>
+                <p class="description">Developed software solutions for space systems and satellite operations.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <img src="images/VirginiaTechLogo.png" alt="Virginia Tech" class="org-image">
+              <div class="timeline-text">
+                <h3>Virginia Tech</h3>
+                <p class="position">Bachelor's in Computer Science (Data Centric Computing), Mathematics minor (Applied Computation), 2022–2025</p>
+                <p class="description">Focused on data-centric computing and applied computational mathematics.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <img src="images/UTSLogo.png" alt="University of Technology Sydney" class="org-image">
+              <div class="timeline-text">
+                <h3>University of Technology Sydney</h3>
+                <p class="position">Bachelor of Artificial Intelligence (Study Abroad), Fall 2024</p>
+                <p class="description">International study program focused on artificial intelligence and machine learning.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <img src="images/NationwideITLogo.png" alt="Nationwide IT Services" class="org-image">
+              <div class="timeline-text">
+                <h3>Nationwide IT Services</h3>
+                <p class="position">Software Engineer Intern, May 2023 – Aug 2023</p>
+                <p class="description">Built enterprise software solutions and contributed to system architecture projects.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <img src="images/IQuasarLogo.png" alt="iQuasar LLC" class="org-image">
+              <div class="timeline-text">
+                <h3>iQuasar LLC</h3>
+                <p class="position">Software & Cybersecurity Intern, May 2021 – Jan 2022</p>
+                <p class="description">Developed secure software applications and implemented cybersecurity best practices.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
         <ul class="links">
-          <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com/sahilmhatr3" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/sahilmhatre/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           <li><a href="#contact" data-nav>Contact</a></li>
         </ul>
       </section>
@@ -54,20 +142,12 @@
         <h1>Projects</h1>
         <ul class="cards">
           <li class="card">
-            <h2>Minimal Portfolio</h2>
-            <p>This website. Clean, dark, fast, and keyboard-friendly.</p>
+            <h2>This site</h2>
+            <p>More soon</p>
             <div class="meta">
               <span class="tag">HTML</span>
               <span class="tag">CSS</span>
               <span class="tag">JS</span>
-            </div>
-          </li>
-          <li class="card">
-            <h2>Iris Explorer</h2>
-            <p>Classic dataset visualizations and simple models.</p>
-            <div class="meta">
-              <span class="tag">Python</span>
-              <span class="tag">ML</span>
             </div>
           </li>
         </ul>
@@ -90,7 +170,6 @@
             <textarea name="message" rows="5" required></textarea>
           </label>
           <button type="submit" class="btn">Send</button>
-          <p class="footnote">This uses a static form endpoint. Replace with your own.</p>
         </form>
       </section>
     </main>

@@ -1,10 +1,34 @@
 (function(){
-  const sections = Array.from(document.querySelectorAll('[data-section]'));
-  const navButtons = Array.from(document.querySelectorAll('[data-nav]'));
-  const indicator = document.querySelector('.nav .indicator');
-  const year = document.getElementById('year');
+  let sections, navButtons, indicator, year;
+  
+  function init(){
+    sections = Array.from(document.querySelectorAll('[data-section]'));
+    navButtons = Array.from(document.querySelectorAll('[data-nav]'));
+    indicator = document.querySelector('.nav .indicator');
+    year = document.getElementById('year');
 
-  if(year){ year.textContent = new Date().getFullYear(); }
+    if(year){ year.textContent = new Date().getFullYear(); }
+
+    // Click handling
+    navButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const href = btn.getAttribute('href');
+        const target = btn.getAttribute('data-target') || (href ? href.replace('#','') : 'about');
+        if(href && href.startsWith('#')) e.preventDefault();
+        activate(target);
+      });
+    });
+
+    // Initial setup
+    const fromHash = (location.hash || '#about').replace('#','');
+    const exists = sections.some(s => s.id === fromHash);
+    activate(exists ? fromHash : 'about');
+    
+    // Delay indicator positioning to avoid layout issues
+    requestAnimationFrame(() => {
+      moveIndicator();
+    });
+  }
 
   function activate(targetId){
     sections.forEach(section => {
@@ -38,23 +62,12 @@
     indicator.style.transform = `translateX(${x}px)`;
   }
 
-  // Click handling
-  navButtons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const href = btn.getAttribute('href');
-      const target = btn.getAttribute('data-target') || (href ? href.replace('#','') : 'about');
-      if(href && href.startsWith('#')) e.preventDefault();
-      activate(target);
-    });
-  });
-
-  // On load, respect hash
-  window.addEventListener('load', () => {
-    const fromHash = (location.hash || '#about').replace('#','');
-    const exists = sections.some(s => s.id === fromHash);
-    activate(exists ? fromHash : 'about');
-    moveIndicator();
-  });
+  // Use DOMContentLoaded for faster initialization
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 
   window.addEventListener('resize', moveIndicator);
 })();
