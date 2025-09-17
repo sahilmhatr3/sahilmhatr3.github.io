@@ -140,6 +140,38 @@ p{color:var(--subtle);line-height:1.65}
 @media (max-width:640px){
   .brand{width:32px;height:32px;border-radius:8px}
   .nav{overflow:auto}
+  
+  .about-intro{
+    flex-direction:column;gap:20px;align-items:center;text-align:center
+  }
+  .profile-photo{
+    width:160px;height:160px;border-radius:20px
+  }
+  
+  .timeline{
+    padding-left:16px;margin:24px 0
+  }
+  .timeline::before{
+    left:6px
+  }
+  .timeline-dot{
+    left:-14px;width:10px;height:10px
+  }
+  .timeline-content{
+    flex-direction:column;gap:12px;align-items:center;text-align:center
+  }
+  .org-image{
+    width:50px;height:50px;border-radius:10px
+  }
+  .timeline-text h3{
+    font-size:16px;margin-bottom:6px
+  }
+  .timeline-text .position{
+    font-size:13px;margin-bottom:6px
+  }
+  .timeline-text .description{
+    font-size:13px;line-height:1.4
+  }
 }
 
 
