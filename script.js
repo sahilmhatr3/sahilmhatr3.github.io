@@ -1,5 +1,5 @@
 (function(){
-  let sections, navButtons, indicator, year, modal, modalBody, modalClose;
+  let sections, navButtons, indicator, year, modal, modalBody, modalClose, scrollProgress;
   
   // Project data
   const projects = {
@@ -163,6 +163,7 @@
     modal = document.getElementById('project-modal');
     modalBody = document.querySelector('.modal-body');
     modalClose = document.querySelector('.modal-close');
+    scrollProgress = document.querySelector('.scroll-progress');
 
     if(year){ year.textContent = new Date().getFullYear(); }
 
@@ -211,6 +212,20 @@
     requestAnimationFrame(() => {
       moveIndicator();
     });
+
+    // Initialize scroll progress
+    updateScrollProgress();
+    window.addEventListener('scroll', updateScrollProgress);
+  }
+
+  function updateScrollProgress() {
+    if (!scrollProgress) return;
+    
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollPercent = (scrollTop / scrollHeight) * 100;
+    
+    scrollProgress.style.width = scrollPercent + '%';
   }
 
   function openProjectModal(projectId) {
@@ -221,6 +236,10 @@
     modal.removeAttribute('hidden');
     document.body.style.overflow = 'hidden';
     
+    // Add modal scroll progress
+    updateModalScrollProgress();
+    modalBody.addEventListener('scroll', updateModalScrollProgress);
+    
     // Focus management
     modalClose.focus();
   }
@@ -228,6 +247,23 @@
   function closeModal() {
     modal.setAttribute('hidden', '');
     document.body.style.overflow = '';
+    
+    // Remove modal scroll progress and restore main scroll progress
+    modalBody.removeEventListener('scroll', updateModalScrollProgress);
+    updateScrollProgress();
+  }
+
+  function updateModalScrollProgress() {
+    if (!modalBody) return;
+    
+    const scrollTop = modalBody.scrollTop;
+    const scrollHeight = modalBody.scrollHeight - modalBody.clientHeight;
+    const scrollPercent = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+    
+    // Update the main scroll progress bar to show modal progress
+    if (scrollProgress) {
+      scrollProgress.style.width = scrollPercent + '%';
+    }
   }
 
   function activate(targetId){
