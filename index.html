@@ -144,12 +144,9 @@
       <section id="projects" class="section" data-section hidden>
         <h1>Projects</h1>
         <ul class="cards">
-          <li class="card">
+          <li class="card" data-project="compute-marketplace">
             <h2>Decentralized Compute Marketplace</h2>
-            <p>A full-stack decentralized marketplace for compute resources where requesters can submit jobs and providers execute them using Docker containers, with payments handled through Ethereum smart contracts. Features a complete job lifecycle from creation to payment release, RESTful API coordination, CLI interface, and automated Go-based provider agents.</p>
-            <div class="project-diagram">
-              <img src="images/compute-marketplace-diagram.svg" alt="Decentralized Compute Marketplace Architecture" style="width: 100%; max-width: 400px; height: auto; border-radius: 8px; margin: 8px 0;">
-            </div>
+            <p>A full-stack Web3 marketplace for distributed compute resources with smart contract escrow, Docker execution, and automated provider agents.</p>
             <div class="meta">
               <span class="tag">Solidity</span>
               <span class="tag">TypeScript</span>
@@ -158,14 +155,20 @@
               <span class="tag">Ethereum</span>
               <span class="tag">Node.js</span>
             </div>
+            <div class="card-footer">
+              <span class="click-hint">Click to learn more</span>
+            </div>
           </li>
-          <li class="card">
-            <h2>This site</h2>
-            <p>More soon</p>
+          <li class="card" data-project="portfolio-site">
+            <h2>Portfolio Website</h2>
+            <p>A minimal, fast-loading single-page portfolio built with vanilla HTML/CSS/JS—no frameworks, no bloat.</p>
             <div class="meta">
               <span class="tag">HTML</span>
               <span class="tag">CSS</span>
-              <span class="tag">JS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+            <div class="card-footer">
+              <span class="click-hint">Click to learn more</span>
             </div>
           </li>
         </ul>
@@ -195,6 +198,16 @@
     <footer class="site-footer">
       <span>© <span id="year"></span> Sahil Mhatre</span>
     </footer>
+
+    <!-- Project Detail Modal -->
+    <div id="project-modal" class="modal" hidden>
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+        <div class="modal-body">
+          <!-- Content will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
