@@ -7,7 +7,6 @@ Design philosophy: This site is intentionally minimal and fast—reflecting how 
 
 ## Local Preview
 
-This site runs entirely in the browser—no server required.
-
 - Just open `index.html`
 - All content and styling are self-contained and static.
+
